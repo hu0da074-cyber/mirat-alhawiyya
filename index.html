@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مرآة الهوية | غرفة الهروب السعودية</title>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#06130d;--panel:#0d2217;--line:#1f4a33;--ink:#f3ead2;--mute:#8fae9a;--gold:#e3bb4b;--green:#006c35;--bad:#e5533d;--ok:#4ade80;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Tajawal,"Segoe UI",Tahoma,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;line-height:1.7;
+background-image:repeating-linear-gradient(45deg,rgba(227,187,75,.035) 0 2px,transparent 2px 26px),repeating-linear-gradient(-45deg,rgba(227,187,75,.035) 0 2px,transparent 2px 26px),radial-gradient(circle at 50% 0,rgba(0,108,53,.45),transparent 60%)}
+.wrap{max-width:520px;margin:0 auto;padding:14px}
+h1,h2,.kufi{font-family:"Reem Kufi",Tajawal,serif}
+.screen{display:none}.screen.on{display:block}
+/* بداية */
+.mirror{width:150px;height:200px;margin:18px auto 10px;border-radius:75px 75px 12px 12px;border:5px solid var(--gold);background:linear-gradient(115deg,#0b3a22 30%,#9fe3b5 48%,#0b3a22 62%);background-size:250% 100%;animation:shine 3.5s infinite;box-shadow:0 0 40px rgba(227,187,75,.35);display:flex;align-items:center;justify-content:center;font-size:3.4rem}
+@keyframes shine{0%{background-position:100% 0}100%{background-position:-60% 0}}
+h1{font-size:2.6rem;text-align:center;color:var(--gold);line-height:1.2}
+.sub{text-align:center;color:var(--mute);margin:6px 0 14px}
+.box{background:var(--panel);border:2px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px}
+.btn{display:block;width:100%;padding:14px;border:0;border-radius:14px;font:700 1.05rem Tajawal,sans-serif;cursor:pointer;background:var(--green);color:#fff;margin-top:10px;box-shadow:0 5px 0 #003d1e;transition:transform .1s}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 #003d1e}
+.btn.gold{background:var(--gold);color:#2b2000;box-shadow:0 5px 0 #8d6d12}
+input{width:100%;padding:13px;border-radius:12px;border:2px solid var(--line);background:#0a1c13;color:var(--ink);font:700 1.1rem Tajawal,sans-serif;text-align:center}
+input:focus{outline:2px solid var(--gold)}
+button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+/* HUD */
+.hud{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;background:var(--panel);border:2px solid var(--line);border-radius:14px;padding:8px 12px}
+.time{font:700 1.3rem monospace;color:var(--gold);min-width:64px}.time.low{color:var(--bad);animation:bl 1s infinite}
+@keyframes bl{50%{opacity:.4}}
+.dots{display:flex;gap:6px;flex:1;justify-content:center}.dots i{width:26px;height:8px;border-radius:4px;background:#173a28}.dots i.d{background:var(--gold)}.dots i.c{background:var(--green);box-shadow:0 0 8px var(--green)}
+.ib{width:38px;height:38px;border-radius:50%;border:2px solid var(--line);background:#0a1c13;color:var(--gold);font-size:1.1rem;cursor:pointer}
+/* باب */
+.scene{text-align:center;margin:6px 0 12px}
+.door{position:relative;height:150px;width:116px;margin:0 auto 8px;overflow:hidden;border-radius:58px 58px 6px 6px;border:3px solid var(--gold);background:#02150c}
+.door::before{content:"";position:absolute;inset:0;background:radial-gradient(#fffbe0,var(--gold) 45%,transparent 78%);opacity:0;transition:opacity 1s}
+.door.open::before{opacity:1}
+.leaf{position:absolute;top:0;bottom:0;width:50%;background:repeating-linear-gradient(45deg,#0b5a32 0 8px,#073b21 8px 16px);transition:transform 1.3s cubic-bezier(.7,0,.3,1)}
+.leaf.l{left:0;border-right:2px solid var(--gold)}.leaf.r{right:0}
+.door.open .l{transform:translateX(-100%)}.door.open .r{transform:translateX(100%)}
+.lock{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2.4rem;z-index:2;transition:opacity .4s}
+.door.open .lock{opacity:0}
+.door.shake{animation:sh .4s}
+@keyframes sh{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+h2{font-size:1.5rem;color:var(--gold)}
+.step{color:var(--mute);font-size:.85rem}
+.q{font-size:1.1rem;font-weight:700;margin-bottom:10px}
+.opt{display:block;width:100%;text-align:right;padding:13px;margin:8px 0;border-radius:12px;border:2px solid var(--line);background:#12301f;color:var(--ink);font:400 1rem Tajawal,sans-serif;cursor:pointer;transition:all .15s}
+.opt:hover{border-color:var(--gold)}
+.opt.ok{background:#0b4a26;border-color:var(--ok);color:var(--ok);font-weight:700}
+.opt.bad{background:#4a1b14;border-color:var(--bad);animation:sh .4s}
+.opt.sel{border-color:var(--gold);background:#2e2a12}
+.num{display:inline-block;width:26px;height:26px;border-radius:50%;background:var(--gold);color:#2b2000;text-align:center;font-weight:700;margin-left:8px}
+.hint{display:none;margin-top:10px;padding:10px;border-right:4px solid var(--gold);background:#1b2a14;border-radius:8px;color:var(--gold);font-size:.92rem}
+.inv{display:flex;gap:8px;justify-content:center;margin-top:10px}
+.inv b{width:46px;height:52px;border:2px dashed var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;font:700 1.8rem "Reem Kufi",serif;color:var(--gold)}
+.inv b.f{border:2px solid var(--gold);background:#2e2a12;animation:pop .6s}
+@keyframes pop{0%{transform:scale(0) rotate(-40deg)}70%{transform:scale(1.3)}100%{transform:scale(1)}}
+#toast{position:fixed;top:calc(env(safe-area-inset-top,0px) + 70px);left:50%;transform:translate(-50%,-30px);background:var(--green);border:2px solid var(--gold);padding:8px 18px;border-radius:30px;font-weight:700;opacity:0;transition:all .3s;z-index:90;pointer-events:none;white-space:nowrap}
+#toast.on{opacity:1;transform:translate(-50%,0)}#toast.bad{background:#7a2316;border-color:var(--bad)}
+.flash{animation:fl .5s}@keyframes fl{30%{box-shadow:inset 0 0 90px var(--bad)}}
+/* فوز */
+.ov{position:fixed;inset:0;background:radial-gradient(circle,rgba(0,80,40,.92),rgba(3,12,8,.97));z-index:50;display:none;align-items:center;justify-content:center;padding:16px;overflow:auto}
+.ov.on{display:flex}
+.cert{max-width:440px;width:100%;text-align:center;border:4px double var(--gold);border-radius:18px;padding:22px 16px;background:rgba(6,19,13,.75)}
+.cert h2{font-size:2rem}.stars{font-size:2rem;letter-spacing:6px}.nm{font:700 1.7rem "Reem Kufi",serif;margin:6px 0}
+/* مرآة الفوز */
+.wm{position:relative;width:160px;height:210px;margin:8px auto 12px;border-radius:80px 80px 14px 14px;border:5px solid var(--gold);box-shadow:0 0 36px rgba(227,187,75,.5),inset 0 0 30px rgba(0,108,53,.4);overflow:hidden;background:#02150c}
+.wm-reflect{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(180deg,#0a3d24 0%,#006c35 40%,#0b4a28 70%,#042016 100%);opacity:0;transform:scale(.85);transition:opacity 1.2s .4s,transform 1.2s .4s}
+.wm.open .wm-reflect{opacity:1;transform:scale(1)}
+.wm-reflect .sky{position:absolute;top:0;left:0;right:0;height:42%;background:linear-gradient(180deg,#1a5c3a,#0d3d24);overflow:hidden}
+.wm-reflect .sky::after{content:"";position:absolute;top:12px;left:50%;width:36px;height:36px;margin-left:-18px;border-radius:50%;background:radial-gradient(circle,#fff8c8,#e3bb4b 60%,transparent 70%);box-shadow:0 0 20px rgba(227,187,75,.6)}
+.wm-reflect .land{position:absolute;bottom:0;left:0;right:0;height:58%;background:linear-gradient(180deg,#0b5a32,#063d22)}
+.wm-reflect .palm{position:absolute;bottom:28%;font-size:1.6rem;filter:drop-shadow(0 2px 2px rgba(0,0,0,.4))}
+.wm-reflect .palm.l{left:18%}.wm-reflect .palm.r{right:18%}
+.wm-reflect .flag{position:absolute;bottom:22%;left:50%;transform:translateX(-50%);font-size:2rem;filter:drop-shadow(0 0 8px rgba(227,187,75,.5));animation:flagW 2.5s ease-in-out infinite}
+@keyframes flagW{0%,100%{transform:translateX(-50%) rotate(-3deg)}50%{transform:translateX(-50%) rotate(3deg)}}
+.wm-reflect .shine{position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.12) 48%,transparent 62%);background-size:200% 100%;animation:shine 3s infinite}
+.wm-leaf{position:absolute;top:0;bottom:0;width:50%;background:linear-gradient(180deg,#0b3a22,#073b21 40%,#0a2e1a);z-index:3;transition:transform 1.4s cubic-bezier(.7,0,.3,1);border:0 solid var(--gold)}
+.wm-leaf.l{left:0;border-right:2px solid var(--gold);transform-origin:left center}
+.wm-leaf.r{right:0;border-left:2px solid var(--gold);transform-origin:right center}
+.wm.open .wm-leaf.l{transform:translateX(-105%) rotateY(-15deg)}
+.wm.open .wm-leaf.r{transform:translateX(105%) rotateY(15deg)}
+.wm-frame{position:absolute;inset:-3px;border-radius:82px 82px 16px 16px;border:3px solid var(--gold);pointer-events:none;z-index:4;box-shadow:inset 0 0 12px rgba(227,187,75,.3)}
+.reflect-txt{margin:4px 0 2px;font-family:"Reem Kufi",Tajawal,serif;font-size:1.15rem;color:var(--gold);letter-spacing:.5px}
+#fx{position:fixed;inset:0;width:100%;height:100%;z-index:60;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.mirror{animation:none}.wm-leaf,.wm-reflect{transition:none}.wm.open .wm-leaf.l,.wm.open .wm-leaf.r{transform:translateX(0)}.flagW{animation:none}}
+</style>
+</head>
+<body>
+<div id="toast"></div>
+<canvas id="fx"></canvas>
+<div class="wrap">
+ <section class="screen on" id="s0">
+  <div class="mirror">🪞</div>
+  <h1>مرآة الهوية</h1>
+  <p class="sub">غرفة هروب سعودية • ٤ غرف + المرآة الأخيرة</p>
+  <div class="box" style="text-align:center">
+   أُغلقت الأبواب خلفكِ في ديوان تراثي، والمرآة مطفأة.<br>
+   كل باب لا ينفتح إلا بإجابة صحيحة، وكل غرفة تمنحكِ <b style="color:var(--gold)">حرفاً</b> من كلمة السر.<br>
+   معكِ <b style="color:var(--gold)">١٥ دقيقة</b>. الخطأ يخصم ١٥ ثانية، والتلميح ٢٠ ثانية.
+  </div>
+  <input id="nm" maxlength="20" placeholder="اكتبي اسمكِ...">
+  <button class="btn gold" onclick="start()">ادخلي الديوان 🔥</button>
+  <p style="text-align:center;color:var(--mute);font-size:.9rem;margin-top:14px">إعداد: هدى العتيبي — متوسطة عمارة بنت حمزة</p>
+ </section>
+ <section class="screen" id="s1">
+  <div class="hud">
+   <span class="time" id="tm">15:00</span>
+   <div class="dots" id="dots"></div>
+   <button class="ib" id="hb" onclick="hint()" title="تلميح (−٢٠ ثانية)">💡</button>
+   <button class="ib" id="sb" onclick="snd()" title="الصوت">🔊</button>
+  </div>
+  <div class="scene"><div class="door" id="door"><i class="leaf l"></i><i class="leaf r"></i><span class="lock" id="lk">🔒</span></div>
+   <h2 id="rn"></h2><div class="step" id="st"></div></div>
+  <div class="box" id="card"><div class="q" id="q"></div><div id="pz"></div><div class="hint" id="ht"></div></div>
+  <div class="inv" id="inv"></div>
+ </section>
+</div>
+<audio id="anthem" preload="auto" src="https://almrj3.com/wp-content/uploads/2021/09/abdwap-%D8%A8%D9%84%D8%A7%D8%AF%D9%8A-%D8%A8%D9%84%D8%A7%D8%AF%D9%8A-%D9%85%D9%86%D8%A7%D8%B1-%D8%A7%D9%84%D9%87%D8%AF%D9%89-%D8%A7%D9%84%D9%86%D8%B3%D8%AE%D8%A9-%D8%A7%D9%84%D8%A3%D8%B5%D9%84%D9%8A%D8%A9-%D9%83%D8%A7%D9%85%D9%84%D8%A9-%D8%B3%D8%B1%D8%A7%D8%AC-%D8%B9%D9%85%D8%B1.mp3"></audio>
+<div class="ov" id="win"><div class="cert">
+ <h2>فتحت المرآة</h2>
+ <div class="wm" id="wm">
+  <div class="wm-reflect">
+   <div class="sky"></div>
+   <div class="land"></div>
+   <span class="palm l">🌴</span>
+   <span class="palm r">🌴</span>
+   <span class="flag">🇸🇦</span>
+   <div class="shine"></div>
+  </div>
+  <i class="wm-leaf l"></i>
+  <i class="wm-leaf r"></i>
+  <div class="wm-frame"></div>
+ </div>
+ <p class="reflect-txt">هذا انعكاسك، جيل الرؤية</p>
+ <div class="nm" id="wn"></div><div class="stars" id="wst"></div>
+ <p id="wt" style="color:var(--gold)"></p>
+ <p class="kufi" style="margin:8px 0;font-size:1.2rem">دمت ياوطني شامخاً</p>
+ <p style="margin:6px 0;font-size:1rem;line-height:1.75">أنت جيل الرؤية، بولائك لقادتك، وانتمائك لوطنك وعزيمتك على الإنجاز، نصنع المجد ونقود المستقبل! 🇸🇦</p>
+ <p style="color:var(--mute);font-size:.85rem;margin-top:6px">إعداد: هدى العتيبي — متوسطة عمارة بنت حمزة</p>
+ <button class="btn gold" onclick="start(1)">العبي مرة أخرى</button>
+</div></div>
+<div class="ov" id="lose"><div class="cert"><div style="font-size:2.6rem">⏳</div><h2>انتهى الوقت</h2>
+ <p style="color:var(--mute)">المرآة ما زالت مطفأة... جرّبي مرة أخرى!</p>
+ <button class="btn gold" onclick="start(1)">إعادة المحاولة</button></div></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const R=[
+{n:"بوابة المعالم",ic:"🏛️",L:"ه",s:[
+ {t:"mc",q:"مدائن صالح (الحِجر) أول موقع سعودي في اليونسكو. أين تقع؟",o:["العلا في شمال غرب المملكة","القصيم","الأحساء","جازان"],a:0,h:"نقوش منحوتة في الصخر قرب العلا."},
+ {t:"mc",q:"الدرعية مهد الدولة السعودية الأولى، قرب أي مدينة؟",o:["الرياض","أبها","الدمام","تبوك"],a:0,h:"هي اليوم العاصمة."},
+ {t:"mc",q:"جدة التاريخية (البلد) تطل على أي بحر؟",o:["الخليج العربي","البحر الأحمر","بحر العرب","المتوسط"],a:1,h:"اللون في اسمه."},
+ {t:"mc",q:"ما عاصمة المملكة العربية السعودية؟",o:["جدة","الرياض","مكة المكرمة","الدمام"],a:1,h:"مدينة نجد ومركز الحكم."}]},
+{n:"مجلس القهوة",ic:"☕",L:"و",s:[
+ {t:"order",q:"رتّبي القهوة العربية: اضغطي الخطوات بالترتيب الصحيح",o:["تحميص حبوب البن","طحن البن","غلي القهوة في الدلة مع الهيل","تقديمها للضيف باليد اليمنى"],h:"من الحبة إلى الفنجان."},
+ {t:"mc",q:"في أي سنة سُجّلت القهوة العربية في قائمة اليونسكو للتراث غير المادي؟",o:["2015","1990","2022","1975"],a:0,h:"بعد ٢٠١٠ بخمس سنوات."},
+ {t:"mc",q:"ما اللغة الرسمية في المملكة العربية السعودية؟",o:["الإنجليزية","العربية","الفرنسية","الأوردو"],a:1,h:"لغة القرآن وهوية الوطن."},
+ {t:"mc",q:"في أي عام سُمّي «عام الخط العربي» في المملكة؟",o:["2019","2020","2022","2024"],a:1,h:"أول الأعوام الثقافية، وامتد أيضاً لعام ٢٠٢١."},
+ {t:"mc",q:"في أي عام سُمّي «عام الإبل» في المملكة؟",o:["2022","2023","2024","2025"],a:2,h:"وافقت الحكومة على تسمية ٢٠٢٤ عام الإبل."},
+ {t:"mc",q:"في أي عام سُمّي «عام الحرف اليدوية» في المملكة؟",o:["2023","2024","2025","2026"],a:2,h:"عام ٢٠٢٥ للاحتفاء بالحِرف والهوية."},
+ {t:"mc",q:"في أي عام تجاوزت المملكة حاجز 100 مليون سائح؟",o:["2019","2021","2023","2025"],a:2,h:"قبل موعد رؤية ٢٠٣٠ بسنوات، إنجاز سياحي وطني."}]},
+{n:"ديوان التاريخ",ic:"📜",L:"ي",s:[
+ {t:"text",q:"في أي سنة ميلادية وُحِّدت المملكة العربية السعودية؟ (اكتبي الأرقام)",a:["1932"],h:"اليوم الوطني ٢٣ سبتمبر، والسنة بين ١٩٣٠ و١٩٣٥."},
+ {t:"mc",q:"من وحّد المملكة وأسّسها بشكلها الحديث؟",o:["الملك عبدالعزيز","الملك فيصل","الملك فهد","الملك سلمان"],a:0,h:"طيّب الله ثراه، «طويل العمر» يعرفه الجميع."},
+ {t:"mc",q:"متى يُحتفل بيوم التأسيس؟",o:["٢٢ فبراير","٢٣ سبتمبر","١ يناير","١٥ مارس"],a:0,h:"شهر الحب الأخضر الثاني من السنة."},
+ {t:"mc",q:"من أطلق رؤية المملكة 2030؟",o:["الملك سلمان","ولي العهد الأمير محمد بن سلمان","الملك فهد","الملك عبدالله"],a:1,h:"ولي العهد ورؤية المستقبل."}]},
+{n:"قاعة الرموز",ic:"🦅",L:"ة",s:[
+ {t:"pick",q:"اختاري العنصرين الأساسيين في شعار المملكة",o:["🌴 النخلة","⚔️ السيفان","👑 التاج","🦅 الصقر","🌙 الهلال","📖 المصحف"],a:[0,1],h:"نماء وقوة."},
+ {t:"mc",q:"ما الذي يظهر تحت الشهادتين على العلم السعودي؟",o:["سيف","نخلة","هلال","نجمة"],a:0,h:"رمز العدل والقوة."},
+ {t:"mc",q:"أيّ مما يلي لا يوجد على بطاقة الهوية الوطنية؟",o:["الاسم","رقم الهوية","رقم الحساب البنكي","تاريخ الميلاد"],a:2,h:"بيانات مالية خاصة."},
+ {t:"mc",q:"ما النشيد الوطني السعودي الحالي؟",o:["بلادي بلادي منار الهدى","سارعي للمجد والعلياء","موطني","النشيد الملكي"],a:1,h:"سارعي… يبدأ بكلمة «سارعي»."},
+ {t:"mc",q:"كم عدد مناطق المملكة الإدارية؟",o:["١٠","١٣","١٥","٢٠"],a:1,h:"ثلاث عشرة منطقة."}]},
+{n:"مرآة الحقيقة",ic:"🪞",L:"",fin:1,s:[
+ {t:"text",q:"«لستُ تاريخاً في الدفاتر ولا شعاراً في المناسبات؛ أنا ما يجعلكِ تقفين بشموخ وتحملينني في كل خطوة.» اجمعي حروف مفاتيحكِ واكتبي كلمة السر:",a:["هوية","هويه"],h:"الحروف في الأسفل: ه و ي ة"}]
+];
+const HYPE=["هلا والله! 🔥","طويل العمر! إجابة صحيحة","عاش الوطن! 💚","فخر السعودية يلمع ✨","أبشري بالنجاح! 🏆","الله يحييكِ!","شاطرة، كملي!"];
+let ri,si,left,iv,got,name,tt,soundOn=true,done=0,hinted,nx,pickS;
+function shuf(a){return a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1])}
+function norm(s){return s.replace(/[٠-٩]/g,d=>"٠١٢٣٤٥٦٧٨٩".indexOf(d)).replace(/[\u064B-\u0652]/g,"").replace(/[أإآ]/g,"ا").replace(/ة/g,"ه").replace(/ى/g,"ي").replace(/\s/g,"")}
+function say(t,bad){const e=$("toast");e.textContent=t;e.className="on"+(bad?" bad":"");clearTimeout(tt);tt=setTimeout(()=>e.className="",1700)}
+/* ===== الصوت ===== */
+let ac;function ia(){ac=ac||new(window.AudioContext||window.webkitAudioContext)();if(ac.state=="suspended")ac.resume()}
+function tone(f,d,ty="sine",v=.1,w=0){if(!soundOn)return;ia();const t=ac.currentTime+w,o=ac.createOscillator(),g=ac.createGain();o.type=ty;o.frequency.value=f;g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+d)}
+function drum(f=80,v=.3,w=0){if(!soundOn)return;ia();const t=ac.currentTime+w,o=ac.createOscillator(),g=ac.createGain();o.frequency.setValueAtTime(f*2.2,t);o.frequency.exponentialRampToValueAtTime(f,t+.12);g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+.3)}
+function boom(){if(!soundOn)return;ia();const n=ac.sampleRate*.6,b=ac.createBuffer(1,n,ac.sampleRate),d=b.getChannelData(0);for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*(1-i/n)**2;const s=ac.createBufferSource(),g=ac.createGain();g.gain.value=.25;s.buffer=b;s.connect(g);g.connect(ac.destination);s.start();drum(55,.35)}
+const sOk=()=>[523,659,784,1047].forEach((f,i)=>tone(f,.2,"triangle",.12,i*.08));
+const sBad=()=>{tone(160,.3,"sawtooth",.1);tone(120,.35,"sawtooth",.1,.1)};
+const sDoor=()=>{tone(90,.9,"sawtooth",.07);boom();[392,494,587,784].forEach((f,i)=>tone(f,.4,"triangle",.12,.8+i*.12))};
+function sWin(){for(let i=0;i<24;i++)drum(i%4==0?70:110,.3,i*.17+(i%3?0:.05));[392,392,523,659,784,659,784,1047].forEach((f,i)=>{tone(f,.35,"sawtooth",.07,i*.22);tone(f/2,.35,"triangle",.1,i*.22)})}
+const SC=[293.7,311.1,370,392,440,466.2,523.3,587.3],MEL=[0,2,3,2,4,3,2,1,0,1,2,4,3,2,1,0];let mi=0,mu;
+function music(on){clearInterval(mu);if(on)mu=setInterval(()=>{if(!soundOn)return;tone(SC[MEL[mi%16]],.32,"triangle",.045);if(mi%4==0)drum(70,.16);if(mi%4==2)tone(1200,.04,"square",.015);mi++},270)}
+function snd(){soundOn=!soundOn;$("sb").textContent=soundOn?"🔊":"🔇"}
+/* ===== اللعبة ===== */
+function start(again){ia();name=again?name:($("nm").value.trim()||"البطلة");ri=0;si=0;left=900;got=[];$("win").classList.remove("on");$("lose").classList.remove("on");fxOn=false;
+ try{$("anthem").pause()}catch(e){}
+ try{$("wm").classList.remove("open")}catch(e){}
+ $("s0").classList.remove("on");$("s1").classList.add("on");$("dots").innerHTML=R.map(()=>"<i></i>").join("");
+ $("inv").innerHTML=R.slice(0,4).map(()=>"<b>؟</b>").join("");clearInterval(iv);iv=setInterval(tick,1000);music(1);sOk();room()}
+function tick(){left--;const m=Math.floor(left/60),s=left%60;$("tm").textContent=(m<10?"0":"")+m+":"+(s<10?"0":"")+s;$("tm").classList.toggle("low",left<=120);if(left<=0)lose()}
+function room(){const r=R[ri];si=0;$("door").classList.remove("open");$("lk").textContent=r.ic;$("rn").textContent=r.n;
+ [...$("dots").children].forEach((d,i)=>d.className=i<ri?"c":i==ri?"d":"");pz()}
+function pz(){const r=R[ri],s=r.s[si];$("st").textContent=`اللغز ${si+1} من ${r.s.length}`;$("q").textContent=s.q;$("ht").style.display="none";hinted=0;nx=0;pickS=[];
+ const p=$("pz");
+ if(s.t=="mc")p.innerHTML=shuf(s.o.map((t,i)=>[t,i])).map(([t,i])=>`<button class="opt" data-i="${i}" onclick="mc(this,${i})">${t}</button>`).join("");
+ if(s.t=="order")p.innerHTML=shuf(s.o.map((t,i)=>[t,i])).map(([t,i])=>`<button class="opt" onclick="od(this,${i})">${t}</button>`).join("");
+ if(s.t=="pick")p.innerHTML=s.o.map((t,i)=>`<button class="opt" onclick="pk(this,${i})">${t}</button>`).join("")+`<button class="btn" onclick="pkOk()">🔓 تحقق</button>`;
+ if(s.t=="text"){p.innerHTML=`<input id="tx" placeholder="اكتبي الإجابة" autocomplete="off"><button class="btn" onclick="tx()">🔓 افتحي</button>`;$("tx").onkeydown=e=>{if(e.key=="Enter")tx()}}}
+function bad(el){left-=15;sBad();say("−١٥ ثانية ⏱️",1);document.body.classList.add("flash");$("door").classList.add("shake");setTimeout(()=>{document.body.classList.remove("flash");$("door").classList.remove("shake");if(el)el.classList.remove("bad")},500);if(el)el.classList.add("bad");if(left<=0)lose()}
+function good(){sOk();say(HYPE[Math.floor(Math.random()*HYPE.length)]);const r=R[ri];setTimeout(()=>{if(++si<r.s.length)pz();else open()},800)}
+function mc(el,i){if(el.classList.contains("ok"))return;if(i==R[ri].s[si].a){el.classList.add("ok");[...$("pz").children].forEach(b=>b.onclick=null);good()}else bad(el)}
+function od(el,i){if(el.classList.contains("ok"))return;if(i==nx){el.classList.add("ok");el.innerHTML=`<span class="num">${++nx}</span>`+el.textContent;if(nx==R[ri].s[si].o.length)good()}else bad(el)}
+function pk(el,i){const k=pickS.indexOf(i);if(k>-1){pickS.splice(k,1);el.classList.remove("sel")}else if(pickS.length<2){pickS.push(i);el.classList.add("sel")}}
+function pkOk(){const a=R[ri].s[si].a;if(pickS.length==2&&a.every(x=>pickS.includes(x)))good();else bad()}
+function tx(){const v=norm($("tx").value);if(R[ri].s[si].a.map(norm).includes(v))good();else bad()}
+function hint(){if(!$("s1").classList.contains("on"))return;const s=R[ri].s[si];if(!hinted){left-=20;hinted=1}$("ht").textContent="💡 "+s.h;$("ht").style.display="block";say("−٢٠ ثانية للتلميح",1);sBad()}
+function open(){const r=R[ri];$("door").classList.add("open");sDoor();if(r.fin){setTimeout(win,1500);return}
+ got.push(r.L);const b=$("inv").children[ri];b.textContent=r.L;b.className="f";say("حصلتِ على حرف: "+r.L+" 🔑");
+ setTimeout(()=>{ri++;room()},2400)}
+function lose(){clearInterval(iv);music(0);$("lose").classList.add("on");sBad()}
+function win(){clearInterval(iv);music(0);const t=900-left,m=Math.floor(t/60);$("wn").textContent=name;$("wt").textContent=`الوقت: ${m} دقيقة و${t%60} ثانية`;
+ $("wst").textContent="⭐".repeat(t<=420?3:t<=660?2:1);$("win").classList.add("on");sWin();fxStart();
+ try{$("wm").classList.remove("open");setTimeout(()=>$("wm").classList.add("open"),180)}catch(e){}
+ try{const a=$("anthem");a.currentTime=8;a.volume=0.9;a.play().catch(()=>{})}catch(e){}}
+/* ===== ألعاب نارية وأعلام ===== */
+const cv=$("fx"),cx=cv.getContext("2d");let P=[],fxOn=false,spr,lastB=0;
+function flag(){const c=document.createElement("canvas");c.width=180;c.height=120;const g=c.getContext("2d");g.fillStyle="#006c35";g.fillRect(0,0,180,120);g.fillStyle="#fff";g.strokeStyle="#fff";g.textAlign="center";g.direction="rtl";g.font="bold 19px Tajawal,Arial";g.fillText("لا إله إلا الله",90,44);g.fillText("محمد رسول الله",90,68);
+ g.lineWidth=4;g.beginPath();g.moveTo(34,92);g.lineTo(146,92);g.stroke();g.lineWidth=5;g.beginPath();g.moveTo(130,84);g.lineTo(130,100);g.stroke();return c}
+function sz(){cv.width=innerWidth;cv.height=innerHeight}
+function fxStart(){sz();spr=flag();P=[];fxOn=true;requestAnimationFrame(loop)}
+function launch(){const W=cv.width;P.push({k:"r",x:W*(.15+Math.random()*.7),y:cv.height,vx:(Math.random()-.5)*2,vy:-(11+Math.random()*4)})}
+function explode(x,y){boom();const C=["#e3bb4b","#ffffff","#4ade80","#fff3b0","#2fd17a"];
+ for(let i=0;i<46;i++){const a=Math.random()*6.28,v=1.5+Math.random()*5;P.push({k:"s",x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,l:1,c:C[i%5]})}
+ for(let i=0;i<7;i++){const a=Math.random()*6.28,v=3+Math.random()*5;P.push({k:"f",x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-2,l:1,r:Math.random()*6,vr:(Math.random()-.5)*.3,w:38+Math.random()*30})}}
+function loop(now){if(!fxOn){cx.clearRect(0,0,cv.width,cv.height);return}
+ cx.clearRect(0,0,cv.width,cv.height);
+ if(now-lastB>650){lastB=now;launch();if(Math.random()<.5)launch();P.push({k:"f",x:Math.random()*cv.width,y:-40,vx:(Math.random()-.5)*1.5,vy:1.5+Math.random()*2,l:1.6,r:Math.random(),vr:(Math.random()-.5)*.1,w:34+Math.random()*24})}
+ P=P.filter(p=>{p.x+=p.vx;p.y+=p.vy;
+  if(p.k=="r"){p.vy+=.2;cx.fillStyle="#fff3b0";cx.fillRect(p.x,p.y,3,10);if(p.vy>-1.5){explode(p.x,p.y);return false}return true}
+  p.vy+=p.k=="s"?.07:.06;p.l-=p.k=="s"?.014:.004;if(p.l<=0)return false;
+  if(p.k=="s"){cx.globalAlpha=p.l;cx.fillStyle=p.c;cx.beginPath();cx.arc(p.x,p.y,2.4,0,6.28);cx.fill()}
+  else{p.r+=p.vr;p.vx*=.99;cx.save();cx.globalAlpha=Math.min(1,p.l);cx.translate(p.x,p.y);cx.rotate(Math.sin(p.r)*.5);cx.drawImage(spr,-p.w/2,-p.w/3,p.w,p.w*.667);cx.restore()}
+  cx.globalAlpha=1;return true});
+ requestAnimationFrame(loop)}
+addEventListener("resize",()=>{if(fxOn)sz()});
+</script>
+</body>
+</html>
